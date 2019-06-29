@@ -1,0 +1,500 @@
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+                [!provide]                        PROVIDE (__executable_start = SEGMENT_START ("text-segment", 0x10000000))
+                0x0000000010000000                . = SEGMENT_START ("text-segment", 0x10000000)
+
+.interp
+ *(.interp)
+
+.note.gnu.build-id
+ *(.note.gnu.build-id)
+
+.hash
+ *(.hash)
+
+.gnu.hash
+ *(.gnu.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rela.init
+ *(.rela.init)
+
+.rela.text
+ *(.rela.text .rela.text.* .rela.gnu.linkonce.t.*)
+
+.rela.fini
+ *(.rela.fini)
+
+.rela.rodata
+ *(.rela.rodata .rela.rodata.* .rela.gnu.linkonce.r.*)
+
+.rela.data.rel.ro
+ *(.rela.data.rel.ro* .rela.gnu.linkonce.d.rel.ro.*)
+
+.rela.data
+ *(.rela.data .rela.data.* .rela.gnu.linkonce.d.*)
+
+.rela.tdata
+ *(.rela.tdata .rela.tdata.* .rela.gnu.linkonce.td.*)
+
+.rela.tbss
+ *(.rela.tbss .rela.tbss.* .rela.gnu.linkonce.tb.*)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rela.got
+ *(.rela.got)
+
+.rela.sdata
+ *(.rela.sdata .rela.sdata.* .rela.gnu.linkonce.s.*)
+
+.rela.sbss
+ *(.rela.sbss .rela.sbss.* .rela.gnu.linkonce.sb.*)
+
+.rela.sdata2
+ *(.rela.sdata2 .rela.sdata2.* .rela.gnu.linkonce.s2.*)
+
+.rela.sbss2
+ *(.rela.sbss2 .rela.sbss2.* .rela.gnu.linkonce.sb2.*)
+
+.rela.bss
+ *(.rela.bss .rela.bss.* .rela.gnu.linkonce.b.*)
+
+.rela.iplt      0x0000000010000000        0x0
+                [!provide]                        PROVIDE (__rela_iplt_start = .)
+ *(.rela.iplt)
+                [!provide]                        PROVIDE (__rela_iplt_end = .)
+
+.rela.plt
+ *(.rela.plt)
+
+.init
+ *(.init)
+
+.plt
+ *(.plt)
+
+.iplt
+ *(.iplt)
+
+.text           0x0000000010000000     0x2838
+ *(.text.unlikely .text.*_unlikely)
+ *(.text.exit .text.exit.*)
+ *(.text.startup .text.startup.*)
+ *(.text.hot .text.hot.*)
+ *(.text .stub .text.* .gnu.linkonce.t.*)
+ .text          0x0000000010000000     0x1438 main.o
+                0x0000000010000000                int0
+                0x0000000010000014                int1
+                0x0000000010000028                int2
+                0x000000001000003c                int3
+                0x0000000010000050                int4
+                0x0000000010000064                int5
+                0x0000000010000078                int6
+                0x000000001000008c                int7
+                0x00000000100000a0                int8
+                0x00000000100000b4                int9
+                0x00000000100000c8                int10
+                0x00000000100000dc                int11
+                0x00000000100000f0                int12
+                0x0000000010000104                int13
+                0x0000000010000118                int14
+                0x000000001000012c                int15
+                0x0000000010000140                int16
+                0x0000000010000154                int17
+                0x0000000010000168                int18
+                0x000000001000017c                int19
+                0x0000000010000190                int20
+                0x00000000100001a4                int21
+                0x00000000100001b8                int22
+                0x00000000100001cc                int23
+                0x00000000100001e0                int24
+                0x00000000100001f4                int25
+                0x0000000010000208                int26
+                0x000000001000021c                int27
+                0x0000000010000230                int28
+                0x0000000010000244                int29
+                0x0000000010000258                int30
+                0x000000001000026c                int31
+                0x0000000010000280                int32
+                0x0000000010000294                int33
+                0x00000000100002a8                int34
+                0x00000000100002bc                int35
+                0x00000000100002d0                int36
+                0x00000000100002e4                int37
+                0x00000000100002f8                int38
+                0x000000001000030c                int39
+                0x0000000010000320                int40
+                0x0000000010000334                int41
+                0x0000000010000348                int42
+                0x000000001000035c                int43
+                0x0000000010000370                int44
+                0x0000000010000384                int45
+                0x0000000010000398                int46
+                0x00000000100003ac                int47
+                0x00000000100003c0                int48
+                0x00000000100003d4                int49
+                0x00000000100003e8                int50
+                0x00000000100003fc                int51
+                0x0000000010000410                int52
+                0x0000000010000424                int53
+                0x0000000010000438                int54
+                0x000000001000044c                int55
+                0x0000000010000460                int56
+                0x0000000010000474                int57
+                0x0000000010000488                int58
+                0x000000001000049c                int59
+                0x00000000100004b0                int60
+                0x00000000100004c4                int61
+                0x00000000100004d8                int62
+                0x00000000100004ec                int63
+                0x0000000010000500                int64
+                0x0000000010000514                int65
+                0x0000000010000528                int66
+                0x000000001000053c                int67
+                0x0000000010000550                int68
+                0x0000000010000564                int69
+                0x0000000010000578                int70
+                0x000000001000058c                int71
+                0x00000000100005a0                int72
+                0x00000000100005b4                int73
+                0x00000000100005c8                int74
+                0x00000000100005dc                int75
+                0x00000000100005f0                int76
+                0x0000000010000604                int77
+                0x0000000010000618                int78
+                0x000000001000062c                int79
+                0x0000000010000640                int80
+                0x0000000010000654                int81
+                0x0000000010000668                int82
+                0x000000001000067c                int83
+                0x0000000010000690                int84
+                0x00000000100006a4                int85
+                0x00000000100006b8                int86
+                0x00000000100006cc                int87
+                0x00000000100006e0                int88
+                0x00000000100006f4                int89
+                0x0000000010000708                int90
+                0x000000001000071c                int91
+                0x0000000010000730                int92
+                0x0000000010000744                int93
+                0x0000000010000758                int94
+                0x000000001000076c                int95
+                0x0000000010000780                int96
+                0x0000000010000794                int97
+                0x00000000100007a8                int98
+                0x00000000100007bc                int99
+                0x00000000100007d0                int100
+                0x00000000100007e4                int101
+                0x00000000100007f8                int102
+                0x000000001000080c                int103
+                0x0000000010000820                int104
+                0x0000000010000834                int105
+                0x0000000010000848                int106
+                0x000000001000085c                int107
+                0x0000000010000870                int108
+                0x0000000010000884                int109
+                0x0000000010000898                int110
+                0x00000000100008ac                int111
+                0x00000000100008c0                int112
+                0x00000000100008d4                int113
+                0x00000000100008e8                int114
+                0x00000000100008fc                int115
+                0x0000000010000910                int116
+                0x0000000010000924                int117
+                0x0000000010000938                int118
+                0x000000001000094c                int119
+                0x0000000010000960                int120
+                0x0000000010000974                int121
+                0x0000000010000988                int122
+                0x000000001000099c                int123
+                0x00000000100009b0                int124
+                0x00000000100009c4                int125
+                0x00000000100009d8                int126
+                0x00000000100009ec                int127
+                0x0000000010000a00                int128
+                0x0000000010000a14                int129
+                0x0000000010000a28                int130
+                0x0000000010000a3c                int131
+                0x0000000010000a50                int132
+                0x0000000010000a64                int133
+                0x0000000010000a78                int134
+                0x0000000010000a8c                int135
+                0x0000000010000aa0                int136
+                0x0000000010000ab4                int137
+                0x0000000010000ac8                int138
+                0x0000000010000adc                int139
+                0x0000000010000af0                int140
+                0x0000000010000b04                int141
+                0x0000000010000b18                int142
+                0x0000000010000b2c                int143
+                0x0000000010000b40                int144
+                0x0000000010000b54                int145
+                0x0000000010000b68                int146
+                0x0000000010000b7c                int147
+                0x0000000010000b90                int148
+                0x0000000010000ba4                int149
+                0x0000000010000bb8                int150
+                0x0000000010000bcc                int151
+                0x0000000010000be0                int152
+                0x0000000010000bf4                int153
+                0x0000000010000c08                int154
+                0x0000000010000c1c                int155
+                0x0000000010000c30                int156
+                0x0000000010000c44                int157
+                0x0000000010000c58                int158
+                0x0000000010000c6c                int159
+                0x0000000010000c80                int160
+                0x0000000010000c94                int161
+                0x0000000010000ca8                int162
+                0x0000000010000cbc                int163
+                0x0000000010000cd0                int164
+                0x0000000010000ce4                int165
+                0x0000000010000cf8                int166
+                0x0000000010000d0c                int167
+                0x0000000010000d20                int168
+                0x0000000010000d34                int169
+                0x0000000010000d48                int170
+                0x0000000010000d5c                int171
+                0x0000000010000d70                int172
+                0x0000000010000d84                int173
+                0x0000000010000d98                int174
+                0x0000000010000dac                int175
+                0x0000000010000dc0                int176
+                0x0000000010000dd4                int177
+                0x0000000010000de8                int178
+                0x0000000010000dfc                int179
+                0x0000000010000e10                int180
+                0x0000000010000e24                int181
+                0x0000000010000e38                int182
+                0x0000000010000e4c                int183
+                0x0000000010000e60                int184
+                0x0000000010000e74                int185
+                0x0000000010000e88                int186
+                0x0000000010000e9c                int187
+                0x0000000010000eb0                int188
+                0x0000000010000ec4                int189
+                0x0000000010000ed8                int190
+                0x0000000010000eec                int191
+                0x0000000010000f00                int192
+                0x0000000010000f14                int193
+                0x0000000010000f28                int194
+                0x0000000010000f3c                int195
+                0x0000000010000f50                int196
+                0x0000000010000f64                int197
+                0x0000000010000f78                int198
+                0x0000000010000f8c                int199
+                0x0000000010000fa0                int200
+                0x0000000010000fb4                int201
+                0x0000000010000fc8                int202
+                0x0000000010000fdc                int203
+                0x0000000010000ff0                int204
+                0x0000000010001004                int205
+                0x0000000010001018                int206
+                0x000000001000102c                int207
+                0x0000000010001040                int208
+                0x0000000010001054                int209
+                0x0000000010001068                int210
+                0x000000001000107c                int211
+                0x0000000010001090                int212
+                0x00000000100010a4                int213
+                0x00000000100010b8                int214
+                0x00000000100010cc                int215
+                0x00000000100010e0                int216
+                0x00000000100010f4                int217
+                0x0000000010001108                int218
+                0x000000001000111c                int219
+                0x0000000010001130                int220
+                0x0000000010001144                int221
+                0x0000000010001158                int222
+                0x000000001000116c                int223
+                0x0000000010001180                int224
+                0x0000000010001194                int225
+                0x00000000100011a8                int226
+                0x00000000100011bc                int227
+                0x00000000100011d0                int228
+                0x00000000100011e4                int229
+                0x00000000100011f8                int230
+                0x000000001000120c                int231
+                0x0000000010001220                int232
+                0x0000000010001234                int233
+                0x0000000010001248                int234
+                0x000000001000125c                int235
+                0x0000000010001270                int236
+                0x0000000010001284                int237
+                0x0000000010001298                int238
+                0x00000000100012ac                int239
+                0x00000000100012c0                int240
+                0x00000000100012d4                int241
+                0x00000000100012e8                int242
+                0x00000000100012fc                int243
+                0x0000000010001310                int244
+                0x0000000010001324                int245
+                0x0000000010001338                int246
+                0x000000001000134c                int247
+                0x0000000010001360                int248
+                0x0000000010001374                int249
+                0x0000000010001388                int250
+                0x000000001000139c                int251
+                0x00000000100013b0                int252
+                0x00000000100013c4                int253
+                0x00000000100013d8                int254
+                0x00000000100013ec                int255
+                0x0000000010001400                start
+ .text          0x0000000010001438     0x1400 interupt.o
+ *(.gnu.warning)
+
+.fini
+ *(.fini)
+                [!provide]                        PROVIDE (__etext = .)
+                [!provide]                        PROVIDE (_etext = .)
+                [!provide]                        PROVIDE (etext = .)
+
+.rodata
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+
+.rodata1
+ *(.rodata1)
+
+.sdata2
+ *(.sdata2 .sdata2.* .gnu.linkonce.s2.*)
+
+.sbss2
+ *(.sbss2 .sbss2.* .gnu.linkonce.sb2.*)
+
+.eh_frame_hdr
+ *(.eh_frame_hdr)
+
+.eh_frame
+ *(.eh_frame)
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+                0x00000000100028b8                . = (ALIGN (0x80) + (. & 0x7f))
+
+.eh_frame
+ *(.eh_frame)
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+
+.tdata
+ *(.tdata .tdata.* .gnu.linkonce.td.*)
+
+.tbss
+ *(.tbss .tbss.* .gnu.linkonce.tb.*)
+ *(.tcommon)
+
+.preinit_array  0x00000000100028b8        0x0
+                [!provide]                        PROVIDE (__preinit_array_start = .)
+ *(.preinit_array)
+                [!provide]                        PROVIDE (__preinit_array_end = .)
+
+.init_array     0x00000000100028b8        0x0
+                [!provide]                        PROVIDE (__init_array_start = .)
+ *(SORT_BY_NAME(.init_array.*))
+ *(.init_array)
+                [!provide]                        PROVIDE (__init_array_end = .)
+
+.fini_array     0x00000000100028b8        0x0
+                [!provide]                        PROVIDE (__fini_array_start = .)
+ *(SORT_BY_NAME(.fini_array.*))
+ *(.fini_array)
+                [!provide]                        PROVIDE (__fini_array_end = .)
+
+.ctors          0x00000000100028b8        0x0
+                0x00000000100028b8                ___ctors = .
+ *crtbegin.o(.ctors)
+ *crtbegin?.o(.ctors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .ctors)
+ *(SORT_BY_NAME(.ctors.*))
+ *(.ctors)
+                0x00000000100028b8                ___ctors_end = .
+
+.dtors          0x00000000100028b8        0x0
+                0x00000000100028b8                ___dtors = .
+ *crtbegin.o(.dtors)
+ *crtbegin?.o(.dtors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .dtors)
+ *(SORT_BY_NAME(.dtors.*))
+ *(.dtors)
+                0x00000000100028b8                ___dtors_end = .
+
+.jcr
+ *(.jcr)
+
+.data.rel.ro
+ *(.data.rel.ro.local* .gnu.linkonce.d.rel.ro.local.*)
+ *(.data.rel.ro* .gnu.linkonce.d.rel.ro.*)
+
+.dynamic
+ *(.dynamic)
+
+.data           0x00000000100028b8      0x400
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x00000000100028b8      0x400 main.o
+ .data          0x0000000010002cb8        0x0 interupt.o
+
+.data1
+ *(.data1)
+
+.got
+ *(.got.plt)
+ *(.igot.plt)
+ *(.got)
+ *(.igot)
+
+.sdata
+ *(.sdata .sdata.* .gnu.linkonce.s.*)
+                0x0000000010002cb8                _edata = .
+                [!provide]                        PROVIDE (edata = .)
+                0x0000000010002cb8                __bss_start = .
+
+.sbss
+ *(.dynsbss)
+ *(.sbss .sbss.* .gnu.linkonce.sb.*)
+ *(.scommon)
+
+.bss            0x0000000010002cb8        0x0
+ *(.dynbss)
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss           0x0000000010002cb8        0x0 main.o
+ .bss           0x0000000010002cb8        0x0 interupt.o
+ *(COMMON)
+                0x0000000010002cb8                . = ALIGN ((. != 0x0)?0x4:0x1)
+                0x0000000010002cb8                . = ALIGN (0x4)
+                0x0000000010002cb8                . = ALIGN (0x4)
+                0x0000000010002cb8                _end = .
+                [!provide]                        PROVIDE (end = .)
+LOAD main.o
+LOAD interupt.o
+OUTPUT(vmlinux elf32-sh)
+
+.comment        0x0000000000000000       0x11
+ .comment       0x0000000000000000       0x11 main.o
+                                         0x12 (size before relaxing)
+ .comment       0x0000000000000011       0x12 interupt.o
