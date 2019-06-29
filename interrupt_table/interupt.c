@@ -309,7 +309,7 @@ void int61() {
 (DEVICE_GPIO)->value = 61;
 while(1){};
 }
-/*
+
 void int62() {
 (DEVICE_GPIO)->value = 62;
 while(1){};
@@ -1278,4 +1278,4 @@ while(1){};
 void int255() {
 (DEVICE_GPIO)->value = 255;
 while(1){};
-} */
+} 
