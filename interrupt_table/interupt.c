@@ -1,1281 +1,1289 @@
 #include "board.h"
 
+void halt() {
+uint64_t i;
+for(i=0;i++;i<3000000){};
+while(1){
+  (DEVICE_GPIO)->value = (DEVICE_AIC0)->rtc_sec_lo;
+};
+}
+
 void int0() {
 (DEVICE_GPIO)->value = 0;
-while(1){};
+halt();
 }
 
 void int1() {
 (DEVICE_GPIO)->value = 1;
-while(1){};
+halt();
 }
 
 void int2() {
 (DEVICE_GPIO)->value = 2;
-while(1){};
+halt();
 }
 
 void int3() {
 (DEVICE_GPIO)->value = 3;
-while(1){};
+halt();
 }
 
 void int4() {
 (DEVICE_GPIO)->value = 4;
-while(1){};
+halt();
 }
 
 void int5() {
 (DEVICE_GPIO)->value = 5;
-while(1){};
+halt();
 }
 
 void int6() {
 (DEVICE_GPIO)->value = 6;
-while(1){};
+halt();
 }
 
 void int7() {
 (DEVICE_GPIO)->value = 7;
-while(1){};
+halt();
 }
 
 void int8() {
 (DEVICE_GPIO)->value = 8;
-while(1){};
+halt();
 }
 
 void int9() {
 (DEVICE_GPIO)->value = 9;
-while(1){};
+halt();
 }
 
 void int10() {
 (DEVICE_GPIO)->value = 10;
-while(1){};
+halt();
 }
 
 void int11() {
 (DEVICE_GPIO)->value = 11;
-while(1){};
+halt();
 }
 
 void int12() {
 (DEVICE_GPIO)->value = 12;
-while(1){};
+halt();
 }
 
 void int13() {
 (DEVICE_GPIO)->value = 13;
-while(1){};
+halt();
 }
 
 void int14() {
 (DEVICE_GPIO)->value = 14;
-while(1){};
+halt();
 }
 
 void int15() {
 (DEVICE_GPIO)->value = 15;
-while(1){};
+halt();
 }
 
 void int16() {
 (DEVICE_GPIO)->value = 16;
-while(1){};
+halt();
 }
 
 void int17() {
 (DEVICE_GPIO)->value = 17;
-while(1){};
+halt();
 }
 
 void int18() {
 (DEVICE_GPIO)->value = 18;
-while(1){};
+halt();
 }
 
 void int19() {
 (DEVICE_GPIO)->value = 19;
-while(1){};
+halt();
 }
 
 void int20() {
 (DEVICE_GPIO)->value = 20;
-while(1){};
+halt();
 }
 
 void int21() {
 (DEVICE_GPIO)->value = 21;
-while(1){};
+halt();
 }
 
 void int22() {
 (DEVICE_GPIO)->value = 22;
-while(1){};
+halt();
 }
 
 void int23() {
 (DEVICE_GPIO)->value = 23;
-while(1){};
+halt();
 }
 
 void int24() {
 (DEVICE_GPIO)->value = 24;
-while(1){};
+halt();
 }
 
 void int25() {
 (DEVICE_GPIO)->value = 25;
-while(1){};
+halt();
 }
 
 void int26() {
 (DEVICE_GPIO)->value = 26;
-while(1){};
+halt();
 }
 
 void int27() {
 (DEVICE_GPIO)->value = 27;
-while(1){};
+halt();
 }
 
 void int28() {
 (DEVICE_GPIO)->value = 28;
-while(1){};
+halt();
 }
 
 void int29() {
 (DEVICE_GPIO)->value = 29;
-while(1){};
+halt();
 }
 
 void int30() {
 (DEVICE_GPIO)->value = 30;
-while(1){};
+halt();
 }
 
 void int31() {
 (DEVICE_GPIO)->value = 31;
-while(1){};
+halt();
 }
 
 void int32() {
 (DEVICE_GPIO)->value = 32;
-while(1){};
+halt();
 }
 
 void int33() {
 (DEVICE_GPIO)->value = 33;
-while(1){};
+halt();
 }
 
 void int34() {
 (DEVICE_GPIO)->value = 34;
-while(1){};
+halt();
 }
 
 void int35() {
 (DEVICE_GPIO)->value = 35;
-while(1){};
+halt();
 }
 
 void int36() {
 (DEVICE_GPIO)->value = 36;
-while(1){};
+halt();
 }
 
 void int37() {
 (DEVICE_GPIO)->value = 37;
-while(1){};
+halt();
 }
 
 void int38() {
 (DEVICE_GPIO)->value = 38;
-while(1){};
+halt();
 }
 
 void int39() {
 (DEVICE_GPIO)->value = 39;
-while(1){};
+halt();
 }
 
 void int40() {
 (DEVICE_GPIO)->value = 40;
-while(1){};
+halt();
 }
 
 void int41() {
 (DEVICE_GPIO)->value = 41;
-while(1){};
+halt();
 }
 
 void int42() {
 (DEVICE_GPIO)->value = 42;
-while(1){};
+halt();
 }
 
 void int43() {
 (DEVICE_GPIO)->value = 43;
-while(1){};
+halt();
 }
 
 void int44() {
 (DEVICE_GPIO)->value = 44;
-while(1){};
+halt();
 }
 
 void int45() {
 (DEVICE_GPIO)->value = 45;
-while(1){};
+halt();
 }
 
 void int46() {
 (DEVICE_GPIO)->value = 46;
-while(1){};
+halt();
 }
 
 void int47() {
 (DEVICE_GPIO)->value = 47;
-while(1){};
+halt();
 }
 
 void int48() {
 (DEVICE_GPIO)->value = 48;
-while(1){};
+halt();
 }
 
 void int49() {
 (DEVICE_GPIO)->value = 49;
-while(1){};
+halt();
 }
 
 void int50() {
 (DEVICE_GPIO)->value = 50;
-while(1){};
+halt();
 }
 
 void int51() {
 (DEVICE_GPIO)->value = 51;
-while(1){};
+halt();
 }
 
 void int52() {
 (DEVICE_GPIO)->value = 52;
-while(1){};
+halt();
 }
 
 void int53() {
 (DEVICE_GPIO)->value = 53;
-while(1){};
+halt();
 }
 
 void int54() {
 (DEVICE_GPIO)->value = 54;
-while(1){};
+halt();
 }
 
 void int55() {
 (DEVICE_GPIO)->value = 55;
-while(1){};
+halt();
 }
 
 void int56() {
 (DEVICE_GPIO)->value = 56;
-while(1){};
+halt();
 }
 
 void int57() {
 (DEVICE_GPIO)->value = 57;
-while(1){};
+halt();
 }
 
 void int58() {
 (DEVICE_GPIO)->value = 58;
-while(1){};
+halt();
 }
 
 void int59() {
 (DEVICE_GPIO)->value = 59;
-while(1){};
+halt();
 }
 
 void int60() {
 (DEVICE_GPIO)->value = 60;
-while(1){};
+halt();
 }
 
 void int61() {
 (DEVICE_GPIO)->value = 61;
-while(1){};
+halt();
 }
 
 void int62() {
 (DEVICE_GPIO)->value = 62;
-while(1){};
+halt();
 }
 
 void int63() {
 (DEVICE_GPIO)->value = 63;
-while(1){};
+halt();
 }
 
 void int64() {
 (DEVICE_GPIO)->value = 64;
-while(1){};
+halt();
 }
 
 void int65() {
 (DEVICE_GPIO)->value = 65;
-while(1){};
+halt();
 }
 
 void int66() {
 (DEVICE_GPIO)->value = 66;
-while(1){};
+halt();
 }
 
 void int67() {
 (DEVICE_GPIO)->value = 67;
-while(1){};
+halt();
 }
 
 void int68() {
 (DEVICE_GPIO)->value = 68;
-while(1){};
+halt();
 }
 
 void int69() {
 (DEVICE_GPIO)->value = 69;
-while(1){};
+halt();
 }
 
 void int70() {
 (DEVICE_GPIO)->value = 70;
-while(1){};
+halt();
 }
 
 void int71() {
 (DEVICE_GPIO)->value = 71;
-while(1){};
+halt();
 }
 
 void int72() {
 (DEVICE_GPIO)->value = 72;
-while(1){};
+halt();
 }
 
 void int73() {
 (DEVICE_GPIO)->value = 73;
-while(1){};
+halt();
 }
 
 void int74() {
 (DEVICE_GPIO)->value = 74;
-while(1){};
+halt();
 }
 
 void int75() {
 (DEVICE_GPIO)->value = 75;
-while(1){};
+halt();
 }
 
 void int76() {
 (DEVICE_GPIO)->value = 76;
-while(1){};
+halt();
 }
 
 void int77() {
 (DEVICE_GPIO)->value = 77;
-while(1){};
+halt();
 }
 
 void int78() {
 (DEVICE_GPIO)->value = 78;
-while(1){};
+halt();
 }
 
 void int79() {
 (DEVICE_GPIO)->value = 79;
-while(1){};
+halt();
 }
 
 void int80() {
 (DEVICE_GPIO)->value = 80;
-while(1){};
+halt();
 }
 
 void int81() {
 (DEVICE_GPIO)->value = 81;
-while(1){};
+halt();
 }
 
 void int82() {
 (DEVICE_GPIO)->value = 82;
-while(1){};
+halt();
 }
 
 void int83() {
 (DEVICE_GPIO)->value = 83;
-while(1){};
+halt();
 }
 
 void int84() {
 (DEVICE_GPIO)->value = 84;
-while(1){};
+halt();
 }
 
 void int85() {
 (DEVICE_GPIO)->value = 85;
-while(1){};
+halt();
 }
 
 void int86() {
 (DEVICE_GPIO)->value = 86;
-while(1){};
+halt();
 }
 
 void int87() {
 (DEVICE_GPIO)->value = 87;
-while(1){};
+halt();
 }
 
 void int88() {
 (DEVICE_GPIO)->value = 88;
-while(1){};
+halt();
 }
 
 void int89() {
 (DEVICE_GPIO)->value = 89;
-while(1){};
+halt();
 }
 
 void int90() {
 (DEVICE_GPIO)->value = 90;
-while(1){};
+halt();
 }
 
 void int91() {
 (DEVICE_GPIO)->value = 91;
-while(1){};
+halt();
 }
 
 void int92() {
 (DEVICE_GPIO)->value = 92;
-while(1){};
+halt();
 }
 
 void int93() {
 (DEVICE_GPIO)->value = 93;
-while(1){};
+halt();
 }
 
 void int94() {
 (DEVICE_GPIO)->value = 94;
-while(1){};
+halt();
 }
 
 void int95() {
 (DEVICE_GPIO)->value = 95;
-while(1){};
+halt();
 }
 
 void int96() {
 (DEVICE_GPIO)->value = 96;
-while(1){};
+halt();
 }
 
 void int97() {
 (DEVICE_GPIO)->value = 97;
-while(1){};
+halt();
 }
 
 void int98() {
 (DEVICE_GPIO)->value = 98;
-while(1){};
+halt();
 }
 
 void int99() {
 (DEVICE_GPIO)->value = 99;
-while(1){};
+halt();
 }
 
 void int100() {
 (DEVICE_GPIO)->value = 100;
-while(1){};
+halt();
 }
 
 void int101() {
 (DEVICE_GPIO)->value = 101;
-while(1){};
+halt();
 }
 
 void int102() {
 (DEVICE_GPIO)->value = 102;
-while(1){};
+halt();
 }
 
 void int103() {
 (DEVICE_GPIO)->value = 103;
-while(1){};
+halt();
 }
 
 void int104() {
 (DEVICE_GPIO)->value = 104;
-while(1){};
+halt();
 }
 
 void int105() {
 (DEVICE_GPIO)->value = 105;
-while(1){};
+halt();
 }
 
 void int106() {
 (DEVICE_GPIO)->value = 106;
-while(1){};
+halt();
 }
 
 void int107() {
 (DEVICE_GPIO)->value = 107;
-while(1){};
+halt();
 }
 
 void int108() {
 (DEVICE_GPIO)->value = 108;
-while(1){};
+halt();
 }
 
 void int109() {
 (DEVICE_GPIO)->value = 109;
-while(1){};
+halt();
 }
 
 void int110() {
 (DEVICE_GPIO)->value = 110;
-while(1){};
+halt();
 }
 
 void int111() {
 (DEVICE_GPIO)->value = 111;
-while(1){};
+halt();
 }
 
 void int112() {
 (DEVICE_GPIO)->value = 112;
-while(1){};
+halt();
 }
 
 void int113() {
 (DEVICE_GPIO)->value = 113;
-while(1){};
+halt();
 }
 
 void int114() {
 (DEVICE_GPIO)->value = 114;
-while(1){};
+halt();
 }
 
 void int115() {
 (DEVICE_GPIO)->value = 115;
-while(1){};
+halt();
 }
 
 void int116() {
 (DEVICE_GPIO)->value = 116;
-while(1){};
+halt();
 }
 
 void int117() {
 (DEVICE_GPIO)->value = 117;
-while(1){};
+halt();
 }
 
 void int118() {
 (DEVICE_GPIO)->value = 118;
-while(1){};
+halt();
 }
 
 void int119() {
 (DEVICE_GPIO)->value = 119;
-while(1){};
+halt();
 }
 
 void int120() {
 (DEVICE_GPIO)->value = 120;
-while(1){};
+halt();
 }
 
 void int121() {
 (DEVICE_GPIO)->value = 121;
-while(1){};
+halt();
 }
 
 void int122() {
 (DEVICE_GPIO)->value = 122;
-while(1){};
+halt();
 }
 
 void int123() {
 (DEVICE_GPIO)->value = 123;
-while(1){};
+halt();
 }
 
 void int124() {
 (DEVICE_GPIO)->value = 124;
-while(1){};
+halt();
 }
 
 void int125() {
 (DEVICE_GPIO)->value = 125;
-while(1){};
+halt();
 }
 
 void int126() {
 (DEVICE_GPIO)->value = 126;
-while(1){};
+halt();
 }
 
 void int127() {
 (DEVICE_GPIO)->value = 127;
-while(1){};
+halt();
 }
 
 void int128() {
 (DEVICE_GPIO)->value = 128;
-while(1){};
+halt();
 }
 
 void int129() {
 (DEVICE_GPIO)->value = 129;
-while(1){};
+halt();
 }
 
 void int130() {
 (DEVICE_GPIO)->value = 130;
-while(1){};
+halt();
 }
 
 void int131() {
 (DEVICE_GPIO)->value = 131;
-while(1){};
+halt();
 }
 
 void int132() {
 (DEVICE_GPIO)->value = 132;
-while(1){};
+halt();
 }
 
 void int133() {
 (DEVICE_GPIO)->value = 133;
-while(1){};
+halt();
 }
 
 void int134() {
 (DEVICE_GPIO)->value = 134;
-while(1){};
+halt();
 }
 
 void int135() {
 (DEVICE_GPIO)->value = 135;
-while(1){};
+halt();
 }
 
 void int136() {
 (DEVICE_GPIO)->value = 136;
-while(1){};
+halt();
 }
 
 void int137() {
 (DEVICE_GPIO)->value = 137;
-while(1){};
+halt();
 }
 
 void int138() {
 (DEVICE_GPIO)->value = 138;
-while(1){};
+halt();
 }
 
 void int139() {
 (DEVICE_GPIO)->value = 139;
-while(1){};
+halt();
 }
 
 void int140() {
 (DEVICE_GPIO)->value = 140;
-while(1){};
+halt();
 }
 
 void int141() {
 (DEVICE_GPIO)->value = 141;
-while(1){};
+halt();
 }
 
 void int142() {
 (DEVICE_GPIO)->value = 142;
-while(1){};
+halt();
 }
 
 void int143() {
 (DEVICE_GPIO)->value = 143;
-while(1){};
+halt();
 }
 
 void int144() {
 (DEVICE_GPIO)->value = 144;
-while(1){};
+halt();
 }
 
 void int145() {
 (DEVICE_GPIO)->value = 145;
-while(1){};
+halt();
 }
 
 void int146() {
 (DEVICE_GPIO)->value = 146;
-while(1){};
+halt();
 }
 
 void int147() {
 (DEVICE_GPIO)->value = 147;
-while(1){};
+halt();
 }
 
 void int148() {
 (DEVICE_GPIO)->value = 148;
-while(1){};
+halt();
 }
 
 void int149() {
 (DEVICE_GPIO)->value = 149;
-while(1){};
+halt();
 }
 
 void int150() {
 (DEVICE_GPIO)->value = 150;
-while(1){};
+halt();
 }
 
 void int151() {
 (DEVICE_GPIO)->value = 151;
-while(1){};
+halt();
 }
 
 void int152() {
 (DEVICE_GPIO)->value = 152;
-while(1){};
+halt();
 }
 
 void int153() {
 (DEVICE_GPIO)->value = 153;
-while(1){};
+halt();
 }
 
 void int154() {
 (DEVICE_GPIO)->value = 154;
-while(1){};
+halt();
 }
 
 void int155() {
 (DEVICE_GPIO)->value = 155;
-while(1){};
+halt();
 }
 
 void int156() {
 (DEVICE_GPIO)->value = 156;
-while(1){};
+halt();
 }
 
 void int157() {
 (DEVICE_GPIO)->value = 157;
-while(1){};
+halt();
 }
 
 void int158() {
 (DEVICE_GPIO)->value = 158;
-while(1){};
+halt();
 }
 
 void int159() {
 (DEVICE_GPIO)->value = 159;
-while(1){};
+halt();
 }
 
 void int160() {
 (DEVICE_GPIO)->value = 160;
-while(1){};
+halt();
 }
 
 void int161() {
 (DEVICE_GPIO)->value = 161;
-while(1){};
+halt();
 }
 
 void int162() {
 (DEVICE_GPIO)->value = 162;
-while(1){};
+halt();
 }
 
 void int163() {
 (DEVICE_GPIO)->value = 163;
-while(1){};
+halt();
 }
 
 void int164() {
 (DEVICE_GPIO)->value = 164;
-while(1){};
+halt();
 }
 
 void int165() {
 (DEVICE_GPIO)->value = 165;
-while(1){};
+halt();
 }
 
 void int166() {
 (DEVICE_GPIO)->value = 166;
-while(1){};
+halt();
 }
 
 void int167() {
 (DEVICE_GPIO)->value = 167;
-while(1){};
+halt();
 }
 
 void int168() {
 (DEVICE_GPIO)->value = 168;
-while(1){};
+halt();
 }
 
 void int169() {
 (DEVICE_GPIO)->value = 169;
-while(1){};
+halt();
 }
 
 void int170() {
 (DEVICE_GPIO)->value = 170;
-while(1){};
+halt();
 }
 
 void int171() {
 (DEVICE_GPIO)->value = 171;
-while(1){};
+halt();
 }
 
 void int172() {
 (DEVICE_GPIO)->value = 172;
-while(1){};
+halt();
 }
 
 void int173() {
 (DEVICE_GPIO)->value = 173;
-while(1){};
+halt();
 }
 
 void int174() {
 (DEVICE_GPIO)->value = 174;
-while(1){};
+halt();
 }
 
 void int175() {
 (DEVICE_GPIO)->value = 175;
-while(1){};
+halt();
 }
 
 void int176() {
 (DEVICE_GPIO)->value = 176;
-while(1){};
+halt();
 }
 
 void int177() {
 (DEVICE_GPIO)->value = 177;
-while(1){};
+halt();
 }
 
 void int178() {
 (DEVICE_GPIO)->value = 178;
-while(1){};
+halt();
 }
 
 void int179() {
 (DEVICE_GPIO)->value = 179;
-while(1){};
+halt();
 }
 
 void int180() {
 (DEVICE_GPIO)->value = 180;
-while(1){};
+halt();
 }
 
 void int181() {
 (DEVICE_GPIO)->value = 181;
-while(1){};
+halt();
 }
 
 void int182() {
 (DEVICE_GPIO)->value = 182;
-while(1){};
+halt();
 }
 
 void int183() {
 (DEVICE_GPIO)->value = 183;
-while(1){};
+halt();
 }
 
 void int184() {
 (DEVICE_GPIO)->value = 184;
-while(1){};
+halt();
 }
 
 void int185() {
 (DEVICE_GPIO)->value = 185;
-while(1){};
+halt();
 }
 
 void int186() {
 (DEVICE_GPIO)->value = 186;
-while(1){};
+halt();
 }
 
 void int187() {
 (DEVICE_GPIO)->value = 187;
-while(1){};
+halt();
 }
 
 void int188() {
 (DEVICE_GPIO)->value = 188;
-while(1){};
+halt();
 }
 
 void int189() {
 (DEVICE_GPIO)->value = 189;
-while(1){};
+halt();
 }
 
 void int190() {
 (DEVICE_GPIO)->value = 190;
-while(1){};
+halt();
 }
 
 void int191() {
 (DEVICE_GPIO)->value = 191;
-while(1){};
+halt();
 }
 
 void int192() {
 (DEVICE_GPIO)->value = 192;
-while(1){};
+halt();
 }
 
 void int193() {
 (DEVICE_GPIO)->value = 193;
-while(1){};
+halt();
 }
 
 void int194() {
 (DEVICE_GPIO)->value = 194;
-while(1){};
+halt();
 }
 
 void int195() {
 (DEVICE_GPIO)->value = 195;
-while(1){};
+halt();
 }
 
 void int196() {
 (DEVICE_GPIO)->value = 196;
-while(1){};
+halt();
 }
 
 void int197() {
 (DEVICE_GPIO)->value = 197;
-while(1){};
+halt();
 }
 
 void int198() {
 (DEVICE_GPIO)->value = 198;
-while(1){};
+halt();
 }
 
 void int199() {
 (DEVICE_GPIO)->value = 199;
-while(1){};
+halt();
 }
 
 void int200() {
 (DEVICE_GPIO)->value = 200;
-while(1){};
+halt();
 }
 
 void int201() {
 (DEVICE_GPIO)->value = 201;
-while(1){};
+halt();
 }
 
 void int202() {
 (DEVICE_GPIO)->value = 202;
-while(1){};
+halt();
 }
 
 void int203() {
 (DEVICE_GPIO)->value = 203;
-while(1){};
+halt();
 }
 
 void int204() {
 (DEVICE_GPIO)->value = 204;
-while(1){};
+halt();
 }
 
 void int205() {
 (DEVICE_GPIO)->value = 205;
-while(1){};
+halt();
 }
 
 void int206() {
 (DEVICE_GPIO)->value = 206;
-while(1){};
+halt();
 }
 
 void int207() {
 (DEVICE_GPIO)->value = 207;
-while(1){};
+halt();
 }
 
 void int208() {
 (DEVICE_GPIO)->value = 208;
-while(1){};
+halt();
 }
 
 void int209() {
 (DEVICE_GPIO)->value = 209;
-while(1){};
+halt();
 }
 
 void int210() {
 (DEVICE_GPIO)->value = 210;
-while(1){};
+halt();
 }
 
 void int211() {
 (DEVICE_GPIO)->value = 211;
-while(1){};
+halt();
 }
 
 void int212() {
 (DEVICE_GPIO)->value = 212;
-while(1){};
+halt();
 }
 
 void int213() {
 (DEVICE_GPIO)->value = 213;
-while(1){};
+halt();
 }
 
 void int214() {
 (DEVICE_GPIO)->value = 214;
-while(1){};
+halt();
 }
 
 void int215() {
 (DEVICE_GPIO)->value = 215;
-while(1){};
+halt();
 }
 
 void int216() {
 (DEVICE_GPIO)->value = 216;
-while(1){};
+halt();
 }
 
 void int217() {
 (DEVICE_GPIO)->value = 217;
-while(1){};
+halt();
 }
 
 void int218() {
 (DEVICE_GPIO)->value = 218;
-while(1){};
+halt();
 }
 
 void int219() {
 (DEVICE_GPIO)->value = 219;
-while(1){};
+halt();
 }
 
 void int220() {
 (DEVICE_GPIO)->value = 220;
-while(1){};
+halt();
 }
 
 void int221() {
 (DEVICE_GPIO)->value = 221;
-while(1){};
+halt();
 }
 
 void int222() {
 (DEVICE_GPIO)->value = 222;
-while(1){};
+halt();
 }
 
 void int223() {
 (DEVICE_GPIO)->value = 223;
-while(1){};
+halt();
 }
 
 void int224() {
 (DEVICE_GPIO)->value = 224;
-while(1){};
+halt();
 }
 
 void int225() {
 (DEVICE_GPIO)->value = 225;
-while(1){};
+halt();
 }
 
 void int226() {
 (DEVICE_GPIO)->value = 226;
-while(1){};
+halt();
 }
 
 void int227() {
 (DEVICE_GPIO)->value = 227;
-while(1){};
+halt();
 }
 
 void int228() {
 (DEVICE_GPIO)->value = 228;
-while(1){};
+halt();
 }
 
 void int229() {
 (DEVICE_GPIO)->value = 229;
-while(1){};
+halt();
 }
 
 void int230() {
 (DEVICE_GPIO)->value = 230;
-while(1){};
+halt();
 }
 
 void int231() {
 (DEVICE_GPIO)->value = 231;
-while(1){};
+halt();
 }
 
 void int232() {
 (DEVICE_GPIO)->value = 232;
-while(1){};
+halt();
 }
 
 void int233() {
 (DEVICE_GPIO)->value = 233;
-while(1){};
+halt();
 }
 
 void int234() {
 (DEVICE_GPIO)->value = 234;
-while(1){};
+halt();
 }
 
 void int235() {
 (DEVICE_GPIO)->value = 235;
-while(1){};
+halt();
 }
 
 void int236() {
 (DEVICE_GPIO)->value = 236;
-while(1){};
+halt();
 }
 
 void int237() {
 (DEVICE_GPIO)->value = 237;
-while(1){};
+halt();
 }
 
 void int238() {
 (DEVICE_GPIO)->value = 238;
-while(1){};
+halt();
 }
 
 void int239() {
 (DEVICE_GPIO)->value = 239;
-while(1){};
+halt();
 }
 
 void int240() {
 (DEVICE_GPIO)->value = 240;
-while(1){};
+halt();
 }
 
 void int241() {
 (DEVICE_GPIO)->value = 241;
-while(1){};
+halt();
 }
 
 void int242() {
 (DEVICE_GPIO)->value = 242;
-while(1){};
+halt();
 }
 
 void int243() {
 (DEVICE_GPIO)->value = 243;
-while(1){};
+halt();
 }
 
 void int244() {
 (DEVICE_GPIO)->value = 244;
-while(1){};
+halt();
 }
 
 void int245() {
 (DEVICE_GPIO)->value = 245;
-while(1){};
+halt();
 }
 
 void int246() {
 (DEVICE_GPIO)->value = 246;
-while(1){};
+halt();
 }
 
 void int247() {
 (DEVICE_GPIO)->value = 247;
-while(1){};
+halt();
 }
 
 void int248() {
 (DEVICE_GPIO)->value = 248;
-while(1){};
+halt();
 }
 
 void int249() {
 (DEVICE_GPIO)->value = 249;
-while(1){};
+halt();
 }
 
 void int250() {
 (DEVICE_GPIO)->value = 250;
-while(1){};
+halt();
 }
 
 void int251() {
 (DEVICE_GPIO)->value = 251;
-while(1){};
+halt();
 }
 
 void int252() {
 (DEVICE_GPIO)->value = 252;
-while(1){};
+halt();
 }
 
 void int253() {
 (DEVICE_GPIO)->value = 253;
-while(1){};
+halt();
 }
 
 void int254() {
 (DEVICE_GPIO)->value = 254;
-while(1){};
+halt();
 }
 
 void int255() {
 (DEVICE_GPIO)->value = 255;
-while(1){};
+halt();
 } 
