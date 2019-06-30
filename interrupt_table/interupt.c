@@ -1,8 +1,8 @@
 #include "board.h"
 
 void halt() {
-uint64_t i;
-for(i=0;i++;i<3000000){};
+uint32_t i;
+for(i=0;i++;i<300000){};
 while(1){
   (DEVICE_GPIO)->value = (DEVICE_AIC0)->rtc_sec_lo;
 };
