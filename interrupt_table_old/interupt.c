@@ -1,8 +1,14 @@
 #include "board.h"
+#include "main.h"
+
+void first_in_ram() {
+   start(); // Ugly, ugly hach because linker does not make start the the first thing to execute
+            // but it does not work
+}
 
 void halt() {
 uint32_t i;
-for(i=0;i++;i<300000){};
+for(i=0;i++;i<3000000){};
 while(1){
   (DEVICE_GPIO)->value = (DEVICE_AIC0)->rtc_sec_lo;
 };

@@ -1,0 +1,15 @@
+(de headerf (N) (prinl "void int" N "();"))
+(out "interrupt.h" (for i (range 0 255) (headerf i)))
+
+(de bf(N) 
+(prinl "void " "int" N "() {") 
+(prinl "(DEVICE_GPIO)->value = " N ";") 
+(prinl "wait_sec(3);")
+(prinl "while(1){(DEVICE_GPIO)->value = (DEVICE_AIC0)->rtc_sec_lo; };") 
+(prinl "}"))
+
+(out "interrupt.c" 
+(prinl "#include \"board.h\"")
+(prinl "#include \"wait.h\"")
+  (for i (range 0 255) (bf i)))
+

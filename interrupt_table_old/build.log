@@ -1,0 +1,690 @@
+GNU ld (GNU Binutils) 2.32
+  Supported emulations:
+   shelf
+   shlelf
+   sh
+   shl
+using external linker script:
+==================================================
+/* Default linker script, for normal executables */
+OUTPUT_FORMAT("elf32-sh", "elf32-sh",
+	      "elf32-sh")
+OUTPUT_ARCH(sh)
+ENTRY(_start)
+SECTIONS
+{
+  /* Read-only sections, merged into text segment: */
+  PROVIDE (__executable_start = SEGMENT_START("text-segment", 0x10000000)); . = SEGMENT_START("text-segment", 0x10000000);
+  .interp         : { *(.interp) }
+  .note.gnu.build-id : { *(.note.gnu.build-id) }
+  .hash           : { *(.hash) }
+  .gnu.hash       : { *(.gnu.hash) }
+  .dynsym         : { *(.dynsym) }
+  .dynstr         : { *(.dynstr) }
+  .gnu.version    : { *(.gnu.version) }
+  .gnu.version_d  : { *(.gnu.version_d) }
+  .gnu.version_r  : { *(.gnu.version_r) }
+  .rela.init      : { *(.rela.init) }
+  .rela.text      : { *(.rela.text .rela.text.* .rela.gnu.linkonce.t.*) }
+  .rela.fini      : { *(.rela.fini) }
+  .rela.rodata    : { *(.rela.rodata .rela.rodata.* .rela.gnu.linkonce.r.*) }
+  .rela.data.rel.ro   : { *(.rela.data.rel.ro* .rela.gnu.linkonce.d.rel.ro.*) }
+  .rela.data      : { *(.rela.data .rela.data.* .rela.gnu.linkonce.d.*) }
+  .rela.tdata	  : { *(.rela.tdata .rela.tdata.* .rela.gnu.linkonce.td.*) }
+  .rela.tbss	  : { *(.rela.tbss .rela.tbss.* .rela.gnu.linkonce.tb.*) }
+  .rela.ctors     : { *(.rela.ctors) }
+  .rela.dtors     : { *(.rela.dtors) }
+  .rela.got       : { *(.rela.got) }
+  .rela.sdata     : { *(.rela.sdata .rela.sdata.* .rela.gnu.linkonce.s.*) }
+  .rela.sbss      : { *(.rela.sbss .rela.sbss.* .rela.gnu.linkonce.sb.*) }
+  .rela.sdata2    : { *(.rela.sdata2 .rela.sdata2.* .rela.gnu.linkonce.s2.*) }
+  .rela.sbss2     : { *(.rela.sbss2 .rela.sbss2.* .rela.gnu.linkonce.sb2.*) }
+  .rela.bss       : { *(.rela.bss .rela.bss.* .rela.gnu.linkonce.b.*) }
+  .rela.iplt      :
+    {
+      PROVIDE_HIDDEN (__rela_iplt_start = .);
+      *(.rela.iplt)
+      PROVIDE_HIDDEN (__rela_iplt_end = .);
+    }
+  .rela.plt       :
+    {
+      *(.rela.plt)
+    }
+  .init           :
+  {
+    KEEP (*(.init))
+  } =0
+  .plt            : { *(.plt) }
+  .iplt           : { *(.iplt) }
+  .text           :
+  {
+    *(.text.unlikely .text.*_unlikely)
+    *(.text.exit .text.exit.*)
+    *(.text.startup .text.startup.*)
+    *(.text.hot .text.hot.*)
+    *(.text .stub .text.* .gnu.linkonce.t.*)
+    /* .gnu.warning sections are handled specially by elf32.em.  */
+    *(.gnu.warning)
+  } =0
+  .fini           :
+  {
+    KEEP (*(.fini))
+  } =0
+  PROVIDE (__etext = .);
+  PROVIDE (_etext = .);
+  PROVIDE (etext = .);
+  .rodata         : { *(.rodata .rodata.* .gnu.linkonce.r.*) }
+  .rodata1        : { *(.rodata1) }
+  .sdata2         :
+  {
+    *(.sdata2 .sdata2.* .gnu.linkonce.s2.*)
+  }
+  .sbss2          : { *(.sbss2 .sbss2.* .gnu.linkonce.sb2.*) }
+  .eh_frame_hdr : { *(.eh_frame_hdr) }
+  .eh_frame       : ONLY_IF_RO { KEEP (*(.eh_frame)) }
+  .gcc_except_table   : ONLY_IF_RO { *(.gcc_except_table .gcc_except_table.*) }
+  /* Adjust the address for the data segment.  We want to adjust up to
+     the same address within the page on the next page up.  */
+  . = ALIGN(128) + (. & (128 - 1));
+  /* Exception handling  */
+  .eh_frame       : ONLY_IF_RW { KEEP (*(.eh_frame)) }
+  .gcc_except_table   : ONLY_IF_RW { *(.gcc_except_table .gcc_except_table.*) }
+  /* Thread Local Storage sections  */
+  .tdata	  : { *(.tdata .tdata.* .gnu.linkonce.td.*) }
+  .tbss		  : { *(.tbss .tbss.* .gnu.linkonce.tb.*) *(.tcommon) }
+  .preinit_array     :
+  {
+    PROVIDE_HIDDEN (__preinit_array_start = .);
+    KEEP (*(.preinit_array))
+    PROVIDE_HIDDEN (__preinit_array_end = .);
+  }
+  .init_array     :
+  {
+    PROVIDE_HIDDEN (__init_array_start = .);
+    KEEP (*(SORT(.init_array.*)))
+    KEEP (*(.init_array))
+    PROVIDE_HIDDEN (__init_array_end = .);
+  }
+  .fini_array     :
+  {
+    PROVIDE_HIDDEN (__fini_array_start = .);
+    KEEP (*(SORT(.fini_array.*)))
+    KEEP (*(.fini_array))
+    PROVIDE_HIDDEN (__fini_array_end = .);
+  }
+  .ctors          :
+  {
+    ___ctors = .;
+    /* gcc uses crtbegin.o to find the start of
+       the constructors, so we make sure it is
+       first.  Because this is a wildcard, it
+       doesn't matter if the user does not
+       actually link against crtbegin.o; the
+       linker won't look for a file to match a
+       wildcard.  The wildcard also means that it
+       doesn't matter which directory crtbegin.o
+       is in.  */
+    KEEP (*crtbegin.o(.ctors))
+    KEEP (*crtbegin?.o(.ctors))
+    /* We don't want to include the .ctor section from
+       the crtend.o file until after the sorted ctors.
+       The .ctor section from the crtend file contains the
+       end of ctors marker and it must be last */
+    KEEP (*(EXCLUDE_FILE (*crtend.o *crtend?.o ) .ctors))
+    KEEP (*(SORT(.ctors.*)))
+    KEEP (*(.ctors))
+    ___ctors_end = .;
+  }
+  .dtors          :
+  {
+    ___dtors = .;
+    KEEP (*crtbegin.o(.dtors))
+    KEEP (*crtbegin?.o(.dtors))
+    KEEP (*(EXCLUDE_FILE (*crtend.o *crtend?.o ) .dtors))
+    KEEP (*(SORT(.dtors.*)))
+    KEEP (*(.dtors))
+    ___dtors_end = .;
+  }
+  .jcr            : { KEEP (*(.jcr)) }
+  .data.rel.ro : { *(.data.rel.ro.local* .gnu.linkonce.d.rel.ro.local.*) *(.data.rel.ro* .gnu.linkonce.d.rel.ro.*) }
+  .dynamic        : { *(.dynamic) }
+  .data           :
+  {
+    *(.data .data.* .gnu.linkonce.d.*)
+    SORT(CONSTRUCTORS)
+  }
+  .data1          : { *(.data1) }
+  .got            : { *(.got.plt) *(.igot.plt) *(.got) *(.igot) }
+  /* We want the small data sections together, so single-instruction offsets
+     can access them all, and initialized data all before uninitialized, so
+     we can shorten the on-disk segment size.  */
+  .sdata          :
+  {
+    *(.sdata .sdata.* .gnu.linkonce.s.*)
+  }
+  _edata = .; PROVIDE (edata = .);
+  __bss_start = .;
+  .sbss           :
+  {
+    *(.dynsbss)
+    *(.sbss .sbss.* .gnu.linkonce.sb.*)
+    *(.scommon)
+  }
+  .bss            :
+  {
+   *(.dynbss)
+   *(.bss .bss.* .gnu.linkonce.b.*)
+   *(COMMON)
+   /* Align here to ensure that the .bss section occupies space up to
+      _end.  Align after .bss to ensure correct alignment even if the
+      .bss section disappears because there are no input sections.
+      FIXME: Why do we need it? When there is no .bss section, we don't
+      pad the .data section.  */
+   . = ALIGN(. != 0 ? 32 / 8 : 1);
+  }
+  . = ALIGN(32 / 8);
+  . = ALIGN(32 / 8);
+  _end = .; PROVIDE (end = .);
+}
+
+==================================================
+sh2-elf-ld: mode shelf
+attempt to open main.o succeeded
+main.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+                [!provide]                        PROVIDE (__executable_start = SEGMENT_START ("text-segment", 0x10000000))
+                0x0000000010000000                . = SEGMENT_START ("text-segment", 0x10000000)
+
+.interp
+ *(.interp)
+
+.note.gnu.build-id
+ *(.note.gnu.build-id)
+
+.hash
+ *(.hash)
+
+.gnu.hash
+ *(.gnu.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rela.init
+ *(.rela.init)
+
+.rela.text
+ *(.rela.text .rela.text.* .rela.gnu.linkonce.t.*)
+
+.rela.fini
+ *(.rela.fini)
+
+.rela.rodata
+ *(.rela.rodata .rela.rodata.* .rela.gnu.linkonce.r.*)
+
+.rela.data.rel.ro
+ *(.rela.data.rel.ro* .rela.gnu.linkonce.d.rel.ro.*)
+
+.rela.data
+ *(.rela.data .rela.data.* .rela.gnu.linkonce.d.*)
+
+.rela.tdata
+ *(.rela.tdata .rela.tdata.* .rela.gnu.linkonce.td.*)
+
+.rela.tbss
+ *(.rela.tbss .rela.tbss.* .rela.gnu.linkonce.tb.*)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rela.got
+ *(.rela.got)
+
+.rela.sdata
+ *(.rela.sdata .rela.sdata.* .rela.gnu.linkonce.s.*)
+
+.rela.sbss
+ *(.rela.sbss .rela.sbss.* .rela.gnu.linkonce.sb.*)
+
+.rela.sdata2
+ *(.rela.sdata2 .rela.sdata2.* .rela.gnu.linkonce.s2.*)
+
+.rela.sbss2
+ *(.rela.sbss2 .rela.sbss2.* .rela.gnu.linkonce.sb2.*)
+
+.rela.bss
+ *(.rela.bss .rela.bss.* .rela.gnu.linkonce.b.*)
+
+.rela.iplt      0x0000000010000000        0x0
+                [!provide]                        PROVIDE (__rela_iplt_start = .)
+ *(.rela.iplt)
+                [!provide]                        PROVIDE (__rela_iplt_end = .)
+
+.rela.plt
+ *(.rela.plt)
+
+.init
+ *(.init)
+
+.plt
+ *(.plt)
+
+.iplt
+ *(.iplt)
+
+.text           0x0000000010000000     0x28f4
+ *(.text.unlikely .text.*_unlikely)
+ *(.text.exit .text.exit.*)
+ *(.text.startup .text.startup.*)
+ *(.text.hot .text.hot.*)
+ *(.text .stub .text.* .gnu.linkonce.t.*)
+ .text          0x0000000010000000     0x28f4 main.o
+                0x0000000010000000                first_in_ram
+                0x000000001000001c                halt
+                0x0000000010000054                int0
+                0x000000001000007c                int1
+                0x00000000100000a4                int2
+                0x00000000100000cc                int3
+                0x00000000100000f4                int4
+                0x000000001000011c                int5
+                0x0000000010000144                int6
+                0x000000001000016c                int7
+                0x0000000010000194                int8
+                0x00000000100001bc                int9
+                0x00000000100001e4                int10
+                0x000000001000020c                int11
+                0x0000000010000234                int12
+                0x000000001000025c                int13
+                0x0000000010000284                int14
+                0x00000000100002ac                int15
+                0x00000000100002d4                int16
+                0x00000000100002fc                int17
+                0x0000000010000324                int18
+                0x000000001000034c                int19
+                0x0000000010000374                int20
+                0x000000001000039c                int21
+                0x00000000100003c4                int22
+                0x00000000100003ec                int23
+                0x0000000010000414                int24
+                0x000000001000043c                int25
+                0x0000000010000464                int26
+                0x000000001000048c                int27
+                0x00000000100004b4                int28
+                0x00000000100004dc                int29
+                0x0000000010000504                int30
+                0x000000001000052c                int31
+                0x0000000010000554                int32
+                0x000000001000057c                int33
+                0x00000000100005a4                int34
+                0x00000000100005cc                int35
+                0x00000000100005f4                int36
+                0x000000001000061c                int37
+                0x0000000010000644                int38
+                0x000000001000066c                int39
+                0x0000000010000694                int40
+                0x00000000100006bc                int41
+                0x00000000100006e4                int42
+                0x000000001000070c                int43
+                0x0000000010000734                int44
+                0x000000001000075c                int45
+                0x0000000010000784                int46
+                0x00000000100007ac                int47
+                0x00000000100007d4                int48
+                0x00000000100007fc                int49
+                0x0000000010000824                int50
+                0x000000001000084c                int51
+                0x0000000010000874                int52
+                0x000000001000089c                int53
+                0x00000000100008c4                int54
+                0x00000000100008ec                int55
+                0x0000000010000914                int56
+                0x000000001000093c                int57
+                0x0000000010000964                int58
+                0x000000001000098c                int59
+                0x00000000100009b4                int60
+                0x00000000100009dc                int61
+                0x0000000010000a04                int62
+                0x0000000010000a2c                int63
+                0x0000000010000a54                int64
+                0x0000000010000a7c                int65
+                0x0000000010000aa4                int66
+                0x0000000010000acc                int67
+                0x0000000010000af4                int68
+                0x0000000010000b1c                int69
+                0x0000000010000b44                int70
+                0x0000000010000b6c                int71
+                0x0000000010000b94                int72
+                0x0000000010000bbc                int73
+                0x0000000010000be4                int74
+                0x0000000010000c0c                int75
+                0x0000000010000c34                int76
+                0x0000000010000c5c                int77
+                0x0000000010000c84                int78
+                0x0000000010000cac                int79
+                0x0000000010000cd4                int80
+                0x0000000010000cfc                int81
+                0x0000000010000d24                int82
+                0x0000000010000d4c                int83
+                0x0000000010000d74                int84
+                0x0000000010000d9c                int85
+                0x0000000010000dc4                int86
+                0x0000000010000dec                int87
+                0x0000000010000e14                int88
+                0x0000000010000e3c                int89
+                0x0000000010000e64                int90
+                0x0000000010000e8c                int91
+                0x0000000010000eb4                int92
+                0x0000000010000edc                int93
+                0x0000000010000f04                int94
+                0x0000000010000f2c                int95
+                0x0000000010000f54                int96
+                0x0000000010000f7c                int97
+                0x0000000010000fa4                int98
+                0x0000000010000fcc                int99
+                0x0000000010000ff4                int100
+                0x000000001000101c                int101
+                0x0000000010001044                int102
+                0x000000001000106c                int103
+                0x0000000010001094                int104
+                0x00000000100010bc                int105
+                0x00000000100010e4                int106
+                0x000000001000110c                int107
+                0x0000000010001134                int108
+                0x000000001000115c                int109
+                0x0000000010001184                int110
+                0x00000000100011ac                int111
+                0x00000000100011d4                int112
+                0x00000000100011fc                int113
+                0x0000000010001224                int114
+                0x000000001000124c                int115
+                0x0000000010001274                int116
+                0x000000001000129c                int117
+                0x00000000100012c4                int118
+                0x00000000100012ec                int119
+                0x0000000010001314                int120
+                0x000000001000133c                int121
+                0x0000000010001364                int122
+                0x000000001000138c                int123
+                0x00000000100013b4                int124
+                0x00000000100013dc                int125
+                0x0000000010001404                int126
+                0x000000001000142c                int127
+                0x0000000010001454                int128
+                0x000000001000147c                int129
+                0x00000000100014a4                int130
+                0x00000000100014cc                int131
+                0x00000000100014f4                int132
+                0x000000001000151c                int133
+                0x0000000010001544                int134
+                0x000000001000156c                int135
+                0x0000000010001594                int136
+                0x00000000100015bc                int137
+                0x00000000100015e4                int138
+                0x000000001000160c                int139
+                0x0000000010001634                int140
+                0x000000001000165c                int141
+                0x0000000010001684                int142
+                0x00000000100016ac                int143
+                0x00000000100016d4                int144
+                0x00000000100016fc                int145
+                0x0000000010001724                int146
+                0x000000001000174c                int147
+                0x0000000010001774                int148
+                0x000000001000179c                int149
+                0x00000000100017c4                int150
+                0x00000000100017ec                int151
+                0x0000000010001814                int152
+                0x000000001000183c                int153
+                0x0000000010001864                int154
+                0x000000001000188c                int155
+                0x00000000100018b4                int156
+                0x00000000100018dc                int157
+                0x0000000010001904                int158
+                0x000000001000192c                int159
+                0x0000000010001954                int160
+                0x000000001000197c                int161
+                0x00000000100019a4                int162
+                0x00000000100019cc                int163
+                0x00000000100019f4                int164
+                0x0000000010001a1c                int165
+                0x0000000010001a44                int166
+                0x0000000010001a6c                int167
+                0x0000000010001a94                int168
+                0x0000000010001abc                int169
+                0x0000000010001ae4                int170
+                0x0000000010001b0c                int171
+                0x0000000010001b34                int172
+                0x0000000010001b5c                int173
+                0x0000000010001b84                int174
+                0x0000000010001bac                int175
+                0x0000000010001bd4                int176
+                0x0000000010001bfc                int177
+                0x0000000010001c24                int178
+                0x0000000010001c4c                int179
+                0x0000000010001c74                int180
+                0x0000000010001c9c                int181
+                0x0000000010001cc4                int182
+                0x0000000010001cec                int183
+                0x0000000010001d14                int184
+                0x0000000010001d3c                int185
+                0x0000000010001d64                int186
+                0x0000000010001d8c                int187
+                0x0000000010001db4                int188
+                0x0000000010001ddc                int189
+                0x0000000010001e04                int190
+                0x0000000010001e2c                int191
+                0x0000000010001e54                int192
+                0x0000000010001e7c                int193
+                0x0000000010001ea4                int194
+                0x0000000010001ecc                int195
+                0x0000000010001ef4                int196
+                0x0000000010001f1c                int197
+                0x0000000010001f44                int198
+                0x0000000010001f6c                int199
+                0x0000000010001f94                int200
+                0x0000000010001fbc                int201
+                0x0000000010001fe4                int202
+                0x000000001000200c                int203
+                0x0000000010002034                int204
+                0x000000001000205c                int205
+                0x0000000010002084                int206
+                0x00000000100020ac                int207
+                0x00000000100020d4                int208
+                0x00000000100020fc                int209
+                0x0000000010002124                int210
+                0x000000001000214c                int211
+                0x0000000010002174                int212
+                0x000000001000219c                int213
+                0x00000000100021c4                int214
+                0x00000000100021ec                int215
+                0x0000000010002214                int216
+                0x000000001000223c                int217
+                0x0000000010002264                int218
+                0x000000001000228c                int219
+                0x00000000100022b4                int220
+                0x00000000100022dc                int221
+                0x0000000010002304                int222
+                0x000000001000232c                int223
+                0x0000000010002354                int224
+                0x000000001000237c                int225
+                0x00000000100023a4                int226
+                0x00000000100023cc                int227
+                0x00000000100023f4                int228
+                0x000000001000241c                int229
+                0x0000000010002444                int230
+                0x000000001000246c                int231
+                0x0000000010002494                int232
+                0x00000000100024bc                int233
+                0x00000000100024e4                int234
+                0x000000001000250c                int235
+                0x0000000010002534                int236
+                0x000000001000255c                int237
+                0x0000000010002584                int238
+                0x00000000100025ac                int239
+                0x00000000100025d4                int240
+                0x00000000100025fc                int241
+                0x0000000010002624                int242
+                0x000000001000264c                int243
+                0x0000000010002674                int244
+                0x000000001000269c                int245
+                0x00000000100026c4                int246
+                0x00000000100026ec                int247
+                0x0000000010002714                int248
+                0x000000001000273c                int249
+                0x0000000010002764                int250
+                0x000000001000278c                int251
+                0x00000000100027b4                int252
+                0x00000000100027dc                int253
+                0x0000000010002804                int254
+                0x000000001000282c                int255
+                0x0000000010002854                start
+ *(.gnu.warning)
+
+.fini
+ *(.fini)
+                [!provide]                        PROVIDE (__etext = .)
+                [!provide]                        PROVIDE (_etext = .)
+                [!provide]                        PROVIDE (etext = .)
+
+.rodata
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+
+.rodata1
+ *(.rodata1)
+
+.sdata2
+ *(.sdata2 .sdata2.* .gnu.linkonce.s2.*)
+
+.sbss2
+ *(.sbss2 .sbss2.* .gnu.linkonce.sb2.*)
+
+.eh_frame_hdr
+ *(.eh_frame_hdr)
+
+.eh_frame
+ *(.eh_frame)
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+                0x0000000010002974                . = (ALIGN (0x80) + (. & 0x7f))
+
+.eh_frame
+ *(.eh_frame)
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+
+.tdata
+ *(.tdata .tdata.* .gnu.linkonce.td.*)
+
+.tbss
+ *(.tbss .tbss.* .gnu.linkonce.tb.*)
+ *(.tcommon)
+
+.preinit_array  0x0000000010002974        0x0
+                [!provide]                        PROVIDE (__preinit_array_start = .)
+ *(.preinit_array)
+                [!provide]                        PROVIDE (__preinit_array_end = .)
+
+.init_array     0x0000000010002974        0x0
+                [!provide]                        PROVIDE (__init_array_start = .)
+ *(SORT_BY_NAME(.init_array.*))
+ *(.init_array)
+                [!provide]                        PROVIDE (__init_array_end = .)
+
+.fini_array     0x0000000010002974        0x0
+                [!provide]                        PROVIDE (__fini_array_start = .)
+ *(SORT_BY_NAME(.fini_array.*))
+ *(.fini_array)
+                [!provide]                        PROVIDE (__fini_array_end = .)
+
+.ctors          0x0000000010002974        0x0
+                0x0000000010002974                ___ctors = .
+ *crtbegin.o(.ctors)
+ *crtbegin?.o(.ctors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .ctors)
+ *(SORT_BY_NAME(.ctors.*))
+ *(.ctors)
+                0x0000000010002974                ___ctors_end = .
+
+.dtors          0x0000000010002974        0x0
+                0x0000000010002974                ___dtors = .
+ *crtbegin.o(.dtors)
+ *crtbegin?.o(.dtors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .dtors)
+ *(SORT_BY_NAME(.dtors.*))
+ *(.dtors)
+                0x0000000010002974                ___dtors_end = .
+
+.jcr
+ *(.jcr)
+
+.data.rel.ro
+ *(.data.rel.ro.local* .gnu.linkonce.d.rel.ro.local.*)
+ *(.data.rel.ro* .gnu.linkonce.d.rel.ro.*)
+
+.dynamic
+ *(.dynamic)
+
+.data           0x0000000010002974      0x400
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x0000000010002974      0x400 main.o
+
+.data1
+ *(.data1)
+
+.got
+ *(.got.plt)
+ *(.igot.plt)
+ *(.got)
+ *(.igot)
+
+.sdata
+ *(.sdata .sdata.* .gnu.linkonce.s.*)
+                0x0000000010002d74                _edata = .
+                [!provide]                        PROVIDE (edata = .)
+                0x0000000010002d74                __bss_start = .
+
+.sbss
+ *(.dynsbss)
+ *(.sbss .sbss.* .gnu.linkonce.sb.*)
+ *(.scommon)
+
+.bss            0x0000000010002d74        0x0
+ *(.dynbss)
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss           0x0000000010002d74        0x0 main.o
+ *(COMMON)
+                0x0000000010002d74                . = ALIGN ((. != 0x0)?0x4:0x1)
+                0x0000000010002d74                . = ALIGN (0x4)
+                0x0000000010002d74                . = ALIGN (0x4)
+                0x0000000010002d74                _end = .
+                [!provide]                        PROVIDE (end = .)
+LOAD main.o
+OUTPUT(vmlinux elf32-sh)
+
+.comment        0x0000000000000000       0x11
+ .comment       0x0000000000000000       0x11 main.o
+                                         0x12 (size before relaxing)
