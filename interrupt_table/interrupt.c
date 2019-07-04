@@ -25,8 +25,10 @@ void int4() {
 wait_sec(3);
 while(1){(DEVICE_GPIO)->value = (DEVICE_AIC0)->rtc_sec_lo; };
 }
-void int5() {
+void int5() { // MODIFIED BY HAND to see it bounce out of an interrupt
 (DEVICE_GPIO)->value = 5;
+wait_sec(3);
+(DEVICE_GPIO)->value = 15;
 wait_sec(3);
 }
 void int6() {

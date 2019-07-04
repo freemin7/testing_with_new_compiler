@@ -46,7 +46,7 @@
 !
 ! Destroys:
 !
-! (none)
+! (none) 
 
 
 	.global	__ashlsi3
